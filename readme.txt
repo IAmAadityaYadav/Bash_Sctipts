@@ -1,9 +1,43 @@
-This script is used for coping ssh public key on multiple servers only we need to edit the three files.
+This script is used for coping ssh public key on multiple servers only we need to edit the three files:
 1). /etc/hosts
 2). ~/password.enc
 3). ~/copy_ssh_public_key.sh
+
 =============================================================================================
 =============================================================================================
+
+Pre-requestics are:
+
+ssh services should up and running. To check the status use below cmd.
+# systemclt status sshd 
+
+Create ssh key by using below cmd:
+# ssh-key-gen
+
+Generating public/private rsa key pair.
+Enter file in which to save the key (/root/.ssh/id_rsa):
+Enter passphrase (empty for no passphrase):
+Enter same passphrase again:
+Your identification has been saved in /root/.ssh/id_rsa
+Your public key has been saved in /root/.ssh/id_rsa.pub
+The key fingerprint is:
+SHA256:O4J9SFiwX3CbDhUYI+CorSO0ery4OKJ5jOJ3dPlkdJQ root@master.abc.com
+The key's randomart image is:
++---[RSA 3072]----+
+|  ..o +o+.  .    |
+| o   +.= o E     |
+|. . . o + .      |
+|..   + + . .     |
+|... . o S .      |
+|...  = + +       |
+|+=  o = B        |
+|O+=. . o o       |
+|%*o..            |
++----[SHA256]-----+
+
+=============================================================================================
+=============================================================================================
+
 
 1). /etc/hosts
 In /etc/hosts files we need to reclare the all ip and hostname as like below example.
@@ -32,3 +66,5 @@ In this script we have the login to copy the files on multiple servers without a
 
 =============================================================================================
 =============================================================================================
+
+
