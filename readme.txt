@@ -9,10 +9,10 @@ This script is used for coping ssh public key on multiple servers only we need t
 Pre-requestics are:
 
 ssh services should up and running. To check the status use below cmd.
-# systemclt status sshd 
+# systemctl status sshd 
 
 Create ssh key by using below cmd:
-# ssh-key-gen
+# ssh-keygen
 
 Generating public/private rsa key pair.
 Enter file in which to save the key (/root/.ssh/id_rsa):
@@ -40,6 +40,7 @@ The key's randomart image is:
 
 
 1). /etc/hosts
+
 In /etc/hosts files we need to reclare the all ip and hostname as like below example.
 [root@master script]# cat /etc/hosts
 127.0.0.1   localhost localhost.localdomain localhost4 localhost4.localdomain4
@@ -56,6 +57,7 @@ echo "your_password_here" | openssl enc -aes-256-cbc -salt -out password.enc -pa
 
 FYI... Replace your password with the string "your_password_here" and sava the file.  
 
+# chmod 600 password.enc
 
 =============================================================================================
 =============================================================================================
@@ -63,6 +65,8 @@ FYI... Replace your password with the string "your_password_here" and sava the f
 3). ~/copy_ssh_public_key.sh
 
 In this script we have the login to copy the files on multiple servers without any prompt.
+
+# chmod 700 ~/copy_ssh_public_key.sh
 
 =============================================================================================
 =============================================================================================
